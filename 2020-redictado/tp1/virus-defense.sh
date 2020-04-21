@@ -2,18 +2,21 @@
 echo "Defense System v2.01!"
 echo "Menu:"
 echo "obtenerUsuarios buscarCuentaAtacada eliminarUsuario informeDeMemoria"
-select op in obtenerUsuarios buscarCuentaAtacada QuienEsta Salir; do
+select op in obtenerUsuarios buscarCuentaAtacada eliminarUsuario informeDeMemoria salir; do
 case $op in
 	obtenerUsuarios)
-		echo $(ls)
+		echo `cut –d: -f1 /etc/passwd)`
 	;;
 	buscarCuentaAtacada)
-		echo $(pwd)
+		echo "test buscarCuentaAtacada"
 	;;
 	eliminarUsuario)
-		echo $(who -a)
+		echo "test eliminarUsuario"
 	;;
 	informeDeMemoria)
+		echo "test informeDeMemoria"
+	;;
+		salir)
 		echo "Saliendo del programa..."
 		break
 	;;
